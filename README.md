@@ -1,6 +1,11 @@
 # ExpressMorgan
-example API. Express, body-parser, morgan
+a simple REST API
 
-run in cli: npm init
+The endpoints GET, POST, PUT and DELETE data from a 'database' stored in stats.json
 
+## To install node packages run in the CLI:
+```
+npm init
 npm install express morgan body-parser
+npm start
+```
