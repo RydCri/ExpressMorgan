@@ -9,12 +9,16 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 
 app.set('port', PORT);
 app.set('env', NODE_ENV);
+app.set('view engine', 'ejs');
 
 app.use(logger('tiny'));
 app.use(bodyParser.json());
 
 app.use('/', require(path.join(__dirname, 'routes/stats')));
 
+app.get('/', (req, res) => {
+    res.render('index')
+})
 app.use((req, res, next) => {
     const err = new Error(`${req.method} ${req.url} Not Found`);
     err.status = 404;
